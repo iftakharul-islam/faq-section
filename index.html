@@ -1,0 +1,144 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <meta name="viewport" content="width=device-width" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: rgb(18, 61, 141);
+        color: white;
+        font-family: sans-serif;
+      }
+      .wrapper {
+        max-width: 350px;
+        margin: 0 auto;
+        padding: 10px 5px;
+      }
+      .collapse-item:hover {
+        background: rgba(0, 10, 20, 0.4);
+      }
+      .collapse-item {
+        margin: 0.8rem 0;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+      .item-head {
+        display: flex;
+        justify-content: space-between;
+        margin: 0.5rem 0;
+      }
+      .item-body {
+        background-color: rgba(0, 0, 0, 0.1);
+        padding: 0.5rem;
+      }
+      .display-none {
+        display: none;
+      }
+      .title {
+        color: rgba(190, 250, 200, 1);
+      }
+      .toggle-collapse {
+        cursor: pointer;
+        padding: 0.3rem;
+        font-size: 24px;
+        background: rgba(10, 10, 10, 0.2);
+        color: rgba(11, 100, 250, 0.8);
+        border: 0px;
+        border-radius: 5%;
+      }
+      .toggle-collapse:hover {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>FAQ</h1>
+      <div class="collapse-item">
+        <div class="item-head">
+          <div class="title">
+            <h2>Hello Dhaka</h2>
+          </div>
+          <button class="toggle-collapse">+</button>
+        </div>
+        <div class="item-body">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, vel.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
+          delectus odio necessitatibus praesentium aut quae!
+        </div>
+      </div>
+      <div class="collapse-item">
+        <div class="item-head">
+          <div class="title">
+            <h2>Hello Feni</h2>
+          </div>
+          <button class="toggle-collapse">+</button>
+        </div>
+        <div class="item-body">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, vel.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
+          delectus odio necessitatibus praesentium aut quae!
+        </div>
+      </div>
+      <div class="collapse-item">
+        <div class="item-head">
+          <div class="title">
+            <h2>Hello Chottogram</h2>
+          </div>
+          <button class="toggle-collapse">+</button>
+        </div>
+        <div class="item-body">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, vel.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
+          delectus odio necessitatibus praesentium aut quae!
+        </div>
+      </div>
+      <div class="collapse-item">
+        <div class="item-head">
+          <div class="title">
+            <h2>Hello Gazipur</h2>
+          </div>
+          <button class="toggle-collapse">+</button>
+        </div>
+        <div class="item-body">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, vel.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
+          delectus odio necessitatibus praesentium aut quae!
+        </div>
+      </div>
+    </div>
+    <script>
+      let itemBody = document.querySelectorAll('.item-body');
+      let toggleCollapse = document.querySelectorAll('.toggle-collapse');
+
+      function remover() {
+        itemBody.forEach((item) => {
+          console.log((item.style.display = 'none'));
+        });
+      }
+      toggleCollapse.forEach((item) => {
+        item.addEventListener('click', (e) => {
+          if (
+            e.target.parentElement.parentElement.querySelector('.item-body')
+              .style.display == 'block'
+          ) {
+            e.target.parentElement.parentElement.querySelector(
+              '.item-body'
+            ).style.display = 'none';
+          } else {
+            e.target.parentElement.parentElement.querySelector(
+              '.item-body'
+            ).style.display = 'block';
+          }
+        });
+      });
+      remover();
+    </script>
+  </body>
+</html>
